@@ -6,6 +6,24 @@ class VideoRepository {
 
     return NEW_VIDEO;
   }
+
+  async read(video) {
+    const ALL_VIDEOS = await VideoModel.find(video);
+
+    return ALL_VIDEOS;
+  }
+
+  async update(id, video) {
+    const NEW_VIDEO = await VideoModel.findByIdAndUpdate(id, video, { new: true });
+
+    return NEW_VIDEO;
+  }
+
+  async delete(id) {
+    const DELETE_VIDEO = await VideoModel.findByIdAndDelete(id);
+
+    return DELETE_VIDEO;
+  }
 }
 
 module.exports = new VideoRepository();
