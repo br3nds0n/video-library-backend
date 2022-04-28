@@ -7,10 +7,16 @@ class VideoService {
     return NEW_VIDEO;
   }
 
-  async findAll(video) {
-    const ALL_VIDEOS = await VideoRepository.findAll(video);
+  async read(video) {
+    const ALL_VIDEOS = await VideoRepository.read(video);
 
     return ALL_VIDEOS;
+  }
+
+  async update(id, video) {
+    const NEW_VIDEO = await VideoRepository.update(id, video);
+
+    return NEW_VIDEO;
   }
 }
 

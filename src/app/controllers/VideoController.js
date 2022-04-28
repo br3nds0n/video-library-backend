@@ -17,10 +17,28 @@ class VideoController {
     }
   }
 
-  async findlAll(req, res) {
+  async read(req, res) {
     try {
       const VIDEO = req.query;
-      const RESULT = await VideoService.findAll(VIDEO);
+      const RESULT = await VideoService.read(VIDEO);
+
+      return res.status(200).json(RESULT);
+    } catch (error) {
+      return res.status(500).json({
+        details: {
+          name: error.name,
+          description: error.message,
+        },
+      });
+    }
+  }
+
+  async update(req, res) {
+    try {
+      const { id } = req.params;
+      const VIDEO = req.body;
+
+      const RESULT = await VideoService.update(id, VIDEO);
 
       return res.status(200).json(RESULT);
     } catch (error) {

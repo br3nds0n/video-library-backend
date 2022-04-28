@@ -6,8 +6,10 @@ class RouterV1 {
   static v1() {
     const controller = new VideoController();
 
-    router.post('/video', controller.create)
-      .get('/video', controller.findlAll);
+    router
+      .post('/video', controller.create)
+      .get('/video', controller.read)
+      .put('/video/:id', controller.update);
 
     return router;
   }
