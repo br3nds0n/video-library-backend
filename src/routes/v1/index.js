@@ -10,7 +10,8 @@ class RouterV1 {
       .post('/video', controller.create)
       .get('/video', controller.read)
       .put('/video/:id', controller.update)
-      .delete('/video/:id', controller.delete);
+      .delete('/video/:id', controller.delete)
+      .patch('/video/:id', controller.updateLiked);
 
     return router;
   }

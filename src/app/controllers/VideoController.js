@@ -42,7 +42,7 @@ class VideoController {
 
       return res.status(200).json(RESULT);
     } catch (error) {
-      return res.status(500).json({
+      return res.status(error.statusCode).json({
         details: {
           name: error.name,
           description: error.message,
@@ -57,6 +57,24 @@ class VideoController {
       const RESULT = await VideoService.delete(id);
 
       return res.status(204).json(RESULT);
+    } catch (error) {
+      return res.status(error.statusCode).json({
+        details: {
+          name: error.name,
+          description: error.message,
+        },
+      });
+    }
+  }
+
+  async updateLiked(req, res) {
+    try {
+      const { id } = req.params;
+      const liked = req.body;
+
+      const RESULT = await VideoService.update(id, liked);
+
+      return res.status(200).json(RESULT);
     } catch (error) {
       return res.status(500).json({
         details: {
