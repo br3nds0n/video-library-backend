@@ -4,7 +4,9 @@ const VideoController = require('../../app/controllers/VideoController');
 
 class RouterV1 {
   static v1() {
-    router.post('/video', VideoController.create);
+    const controller = new VideoController();
+
+    router.post('/video', controller.create);
     return router;
   }
 }

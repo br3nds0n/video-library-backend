@@ -1,14 +1,10 @@
 const VideoService = require('../services/VideoService');
 
 class VideoController {
-  constructor() {
-    this.videoService = new VideoService();
-  }
-
   async create(req, res) {
     try {
       const VIDEO = req.body;
-      const RESULT = await this.videoService.create(VIDEO);
+      const RESULT = await VideoService.create(VIDEO);
 
       return res.status(201).json(RESULT);
     } catch (error) {
@@ -22,4 +18,4 @@ class VideoController {
   }
 }
 
-module.exports = new VideoController();
+module.exports = VideoController;
