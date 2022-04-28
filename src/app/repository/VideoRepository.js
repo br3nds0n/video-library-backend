@@ -6,6 +6,12 @@ class VideoRepository {
 
     return NEW_VIDEO;
   }
+
+  async findAll(video) {
+    const ALL_VIDEOS = await VideoModel.find(video);
+
+    return ALL_VIDEOS;
+  }
 }
 
 module.exports = new VideoRepository();
