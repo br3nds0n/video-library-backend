@@ -1,14 +1,10 @@
 const router = require('express').Router();
 
-/*
-  import controller
-*/
+const VideoController = require('../../app/controllers/VideoController');
 
 class RouterV1 {
   static v1() {
-    /*
-      router.get('/route', controller.Create)
-    */
+    router.post('/video', VideoController.create);
     return router;
   }
 }
