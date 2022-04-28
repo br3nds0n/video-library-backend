@@ -1,0 +1,26 @@
+{
+  "name": "video-library-backend",
+  "version": "1.0.0",
+  "description": "📦 video library application server",
+  "main": "./src/server.js",
+  "repository": "https://github.com/br3nds0n/video-library-backend.git",
+  "author": "Brendson <brendson.net@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev:server": "nodemon --watch ./src/server.js",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "mongoose": "^6.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.15"
+  }
+}
