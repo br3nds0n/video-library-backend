@@ -9,7 +9,8 @@ class RouterV1 {
     router
       .post('/video', controller.create)
       .get('/video', controller.read)
-      .put('/video/:id', controller.update);
+      .put('/video/:id', controller.update)
+      .delete('/video/:id', controller.delete);
 
     return router;
   }

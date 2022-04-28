@@ -50,6 +50,22 @@ class VideoController {
       });
     }
   }
+
+  async delete(req, res) {
+    try {
+      const { id } = req.params;
+      const RESULT = await VideoService.delete(id);
+
+      return res.status(204).json(RESULT);
+    } catch (error) {
+      return res.status(500).json({
+        details: {
+          name: error.name,
+          description: error.message,
+        },
+      });
+    }
+  }
 }
 
 module.exports = VideoController;

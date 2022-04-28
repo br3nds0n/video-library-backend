@@ -18,6 +18,12 @@ class VideoRepository {
 
     return NEW_VIDEO;
   }
+
+  async delete(id) {
+    const DELETE_VIDEO = await VideoModel.findByIdAndDelete(id);
+
+    return DELETE_VIDEO;
+  }
 }
 
 module.exports = new VideoRepository();
