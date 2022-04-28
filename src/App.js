@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+const ErrorHandle = require('./app/middlewares/ErrorHandle');
 const database = require('./infra/database');
 const routes = require('./routes');
 
@@ -27,6 +28,10 @@ class App {
 
   routes() {
     this.express.use('/api', routes.init());
+  }
+
+  errorHandler() {
+    this.express.use(ErrorHandle);
   }
 }
 

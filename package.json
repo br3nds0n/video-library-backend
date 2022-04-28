@@ -8,13 +8,14 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/server.js",
-    "dev:server": "nodemon --watch ./src/server.js",
+    "dev:server": "nodemon ./src/server.js",
     "lint": "eslint . --fix"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.0",
+    "joi": "^17.6.0",
     "mongoose": "^6.3.1"
   },
   "devDependencies": {
