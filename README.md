@@ -1,6 +1,4 @@
-<img align="right" src="https://img.shields.io/badge/release-v0.1.0-green">
-
-# 📦 video library backend
+# 📦 video library backend <img align="right" src="https://img.shields.io/badge/release-v0.1.0-green">
 
 Welcome.
 
